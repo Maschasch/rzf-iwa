@@ -1,0 +1,19 @@
+{
+  "name": "rzf-ms-bot-directline",
+  "version": "1.0.0-alpha",
+  "description": "A simple front end to the Bot Connector / MS Bot Framework using the directline API",
+  "authors": [
+    "Martin Krause <Martin.Krause@razorfish.de>"
+  ],
+  "license": "BSD-3-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~4.2.0"
+  }
+}

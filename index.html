@@ -1,0 +1,33 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>BOT</title>
+		<link rel="stylesheet" href="./bower_components/normalize.css/normalize.css">
+		<link rel="stylesheet" href="./css/base.css">
+	</head>
+
+	<body>
+		<div class="chat-glass"></div>
+		<div id="content">
+			Loading
+		</div>
+
+		<script id="templateMessage" type="x-tmpl-mustache">
+			<li class="state chat-item--{{from}} chat-item"><h2 class="chat-item--speaker">{{from}}</h2><p>{{{text}}}</p>{{#images}}<img src="{{BASEURI}}{{.}}" />{{/images}}</li>
+		</script>
+		<script id="templateIndicator" type="x-tmpl-mustache">
+			<span id="'+uuid + '-indicator" class="state chat-item chat-item--{{from}} chat-item--indicator"><h2 class="chat-item--speaker">{{from}}</h2><p>{{text}}<span class="dot"></span></p></span>
+		 </script>
+		<script id="templateChatWrapper" type="x-tmpl-mustache">
+			<ul class="chat-wrapper" id="{{uuid}}"></ul>
+		 </script>
+		<script id="templateChatBase" type="x-tmpl-mustache">
+			<div class="chat-box"><div class="chat-dialogue"></div><form class="chat-input"><input type="text" class="chat-input--text" placeholder="Say something..." value=""><button type="submit" class="chat-input--send">Send</button></form></div>
+		</script>
+
+
+		<script src="scripts/bundle.js"></script>
+	</body>
+
+</html>

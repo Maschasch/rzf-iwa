@@ -1,27 +1,45 @@
 <html>
 
-<head>
-    <title>Emerging Experiences Bot</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Telekom - IWA Prototype</title>
+		<link rel="stylesheet" href="./bower_components/normalize.css/normalize.css">
+		<link rel="stylesheet" href="./css/base.css">
+	</head>
 
-<body>
-    <p><img src="http://static1.squarespace.com/static/54ff31f1e4b016c82f84e8bf/t/55f83a1be4b063ac19f4edd4/1468365709383/?format=1500w"
-            alt="Razorfish Emerging Experiences" width="600" /></p>
-    <p style="font-family: Trebuchet MS, Helvetica, sans-serif; font-style: normal; font-size: 15px; color: #12afe5;">
-        Hi there, this is the Emerging Experience R&D Bot.</p>
-    <p style="font-family: Trebuchet MS, Helvetica, sans-serif; font-style: normal; font-size: 15px; color: #777;">
-        This is an R&D bot that lives in the Emerging Experiences Slack team and other channels.<br /> It is used to experiment
-        and learn how bots work, how to interact with them, what works<br /> and what doesn't.</p>
-    <p style="font-family: Trebuchet MS, Helvetica, sans-serif; font-style: normal; font-size: 15px; color: #777;">
-        For more info, please see <a href="https://github.com/RazorfishGermany/emerging-experiences-bot">the GitHub project</a>.</p>
+	<body>
+		<div class="container">
+		   <div class="column-center">
+				<div class="chat-glass"></div>
+				<div id="content">
+					Loading
+				</div>
 
-    <iframe src='https://webchat.botframework.com/embed/emerging_experiences_bot?s=g0AEzheUr00.cwA.us8.t4n-gYJI-hkLt2E53-Xwnr9OLwbTJHGbMAvn9l-xrd0' width="600" height="400"></iframe>
+				<script id="templateMessage" type="x-tmpl-mustache">
+					<li class="state chat-item--{{from}} chat-item"><h2 class="chat-item--speaker">{{from}}</h2><p>{{{text}}}</p>{{#images}}<img src="{{BASEURI}}{{.}}" />{{/images}}</li>
+				</script>
+				<script id="templateIndicator" type="x-tmpl-mustache">
+					<span id="'+uuid + '-indicator" class="state chat-item chat-item--{{from}} chat-item--indicator"><h2 class="chat-item--speaker">{{from}}</h2><p>{{text}}<span class="dot"></span></p></span>
+				 </script>
+				<script id="templateChatWrapper" type="x-tmpl-mustache">
+					<ul class="chat-wrapper" id="{{uuid}}"></ul>
+				 </script>
+				<script id="templateChatBase" type="x-tmpl-mustache">
+					<div class="chat-box"><div class="chat-dialogue"></div><form class="chat-input"><input type="text" class="chat-input--text" placeholder="Meine Nachricht..." value=""><button type="submit" class="chat-input--send" />&nbsp;</button></form></div>
+				</script>
 
-    <p style="font-family: Trebuchet MS, Helvetica, sans-serif; font-style: normal; font-size: 15px; color: #777;">
-        The bot server will not retain any data from you, neither messages nor user ids.<br />
-        However it uses the <a href="https://docs.botframework.com">Microsoft Bot Framework</a> and <a href="https://www.luis.ai/">LUIS</a>, which in turn collect and analyse<br />
-        your message and message content (including your ID). Please see the <a href="https://privacy.microsoft.com/en-gb/privacystatement">Microsoft Privacy<br />
-        Statement</a> for more information regarding their data security and privacy.</p>
-</body>
+
+				<script src="scripts/bundle.js"></script>
+		   </div>
+		   <div class="column-left">
+		   		<span class="helper"></span>
+    			<img src="../assets/tcom_logo.png" height=40 />
+		   </div>
+		   <div class="column-right">
+				<span class="helper"></span>
+    			<img src="../assets/chatbot_icon.png" height=123 />
+		   </div>
+		</div>
+	</body>
 
 </html>

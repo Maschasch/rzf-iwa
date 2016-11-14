@@ -1,0 +1,284 @@
+@font-face {
+    font-family: TeleGroteskUltra;
+    src: url("../assets/webfont/woff/TeleGroteskNormal.woff");
+}
+
+html {
+  background: #222 url("./../assets/body-bg.jpg") center no-repeat;
+  background-size: cover;
+  font-family: "TeleGroteskUltra", sans-serif;
+
+  line-height: 1.7;
+  color: rgba(255,255,255,.9);
+  width: 100%;
+  height:  100%;
+}
+
+body {
+  min-width: 100%;
+  min-height:  100%;
+  font-size: 1.5rem;
+  position:  fixed;
+  top:  0;
+  left:  0;
+}
+
+a {
+  color: rgba(255,255,255,.9);
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+
+  height:  100%;
+  max-height:  100%;
+  min-height:  100%;
+  position: relative;
+  z-index: 1;
+}
+
+.column-left { 
+  float: left; 
+  width: 25%;
+  height:  600px;
+  max-height:  100%;
+  text-align: center; margin: 1em 0;
+}
+
+.column-right { 
+  float: right; 
+  width: 25%;
+  height:  600px;
+  max-height:  100%;
+  text-align: center; margin: 1em 0;
+}
+.column-center{ display: inline-block; width: 50%; }
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+img {
+    vertical-align: middle;
+    max-height: 123px;
+    max-width: 243px;
+}
+
+.chat-glass {
+
+}
+.chat-glass::after{
+  min-width: 100%;
+  min-height:  100%;
+  position:  fixed;
+  top:  0;
+  left:  0;
+  content:  "";
+}
+
+.chat-box {
+  max-width: 500px;
+  min-width: 320px;
+  padding:  0 1rem;
+  display:  flex;
+  flex-direction:  column;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  height:  100vh;
+  max-height:  100vh;
+  min-height:  100vh;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+.chat-dialogue {
+  margin:  2rem 0 1rem 0;
+  height:  auto;
+  overflow: scroll;
+  padding-right: 1.25rem;
+  margin-right: -1.25rem;
+}
+
+.chat-dialogue > ul {
+  list-style: none;
+  margin:  0;
+  padding:  0;
+}
+
+.chat-item {
+  list-style: none;
+  margin: 0 0 2rem 0;
+  padding:  0;
+  line-height: 1;
+  font-size: 1.5rem;
+  display: block;
+}
+
+
+
+.chat-item--me {
+  text-align: right;
+}
+
+
+.chat-item--bot {
+  text-align: left;
+}
+
+.chat-item--speaker {
+  font-size:  0.6875rem;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  color:  rgba(241,241,241, 0.8);
+  text-transform: uppercase;
+  font-weight: normal;
+
+
+}
+
+.chat-item p {
+	margin:  0;
+}
+
+.chat-input {
+  height:  35px;
+  /*padding:  1rem 0 2rem 0;*/
+  padding-left: 5px;
+	display: flex;
+	justify-content: center;
+  background: url("./../assets/searchbar_bg.png") no-repeat;
+}
+
+.chat-input > * {
+  align-self: flex-end;
+}
+
+.chat-input--text {
+  background:  transparent;
+  border:  none;
+  color: rgba(255,255,255,.9);
+  outline:  none;
+  height:  28px;
+  width: 100%;
+}
+
+.chat-input--send {
+  background: url("./../assets/send_icon.png") no-repeat;
+  border:  none;
+  color: rgba(255,255,255,.9);
+  cursor: pointer;
+  outline:  none;
+  position: relative;
+  overflow: hidden;
+  padding:  0 55 0 0;
+  height: 28px;
+  width: 28px;
+}
+
+
+/*
+.chat-input--send::before {
+  background: rgba(255,255,255,.9);
+  width: 0;
+  height: 40px
+  position: absolute;
+  left:  0;
+  top: 0;
+  content:  "";
+  display:  block;
+  transition: all 0.3s;
+  z-index: -1;
+
+}
+*/
+/*
+.chat-input--send:hover{
+
+  color: rgba(0,0,0,.9);
+}
+
+.chat-input--send:hover::before{
+  width:  100%;
+
+}
+*/
+@keyframes opacity1 {
+  0% { opacity: 1; }
+  100% { opacity: 0.5;}
+  100% { opacity: 1;}
+}
+
+
+
+.dot {
+    height: 0;
+    width: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+	left: 4px;
+	animation: opacity1 ;
+
+}
+.dot::before {
+    height: 0;
+    width: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: -2px;
+}
+.dot::after {
+    height: 0;
+    width: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: -2px;
+}
+
+.animation--state > * {
+	transition: all 0.5s ease-in;
+}
+
+.animation--state-active > *{
+  opacity: 1 !important;
+  transform: translate3d( 0, 0 ,0) !important;
+}
+
+.animation--state-left-right > *{
+  opacity: 0.01;
+  transform: translate3d( -10px, 0 , 0);
+}
+
+.animation--state-right-left > *{
+  opacity: 0.01;
+  transform: translate3d( 10px, 0 , 0);
+}
+
+.animation--state-bottom-top > *{
+  opacity: 0.01;
+  transform: translate3d( 0px, -10px , 0);
+}
+
+.animation--state-top-bottom > *{
+  opacity: 0.01;
+  transform: translate3d( 0px, 10px , 0);
+}
+
+

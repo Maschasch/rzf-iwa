@@ -145,3 +145,13 @@ server.get(/.*/, restify.serveStatic({
     'default': 'index.html'
 }));
 
+server.get(/assets/.*/, restify.serveStatic({
+    'directory': './assets',
+    'default': ''
+}));
+
+server.get(/scripts/.*/, restify.serveStatic({
+    'directory': './scripts',
+    'default': ''
+}));
+

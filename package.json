@@ -1,0 +1,26 @@
+{
+  "name": "telekom-iwa",
+  "version": "0.0.1",
+  "description": "Telekom IWA",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maschasch/rzf-iwa.git"
+  },
+  "author": "Razorfish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maschasch/rzf-iwa/issues"
+  },
+  "homepage": "https://github.com/Maschasch/rzf-iwa#readme",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "dtrace-provider": "^0.8.0",
+    "restify": "^4.2.0"
+  },
+  "devDependencies": {}
+}

@@ -140,7 +140,13 @@ dialog.onDefault(builder.DialogAction.send(prompts.sorry));
 // note that to use the web chat, you need to add this endpoint
 // in the bot framework page and enter your webchat app secret
 // in the index.html
-server.get(/.*/, restify.serveStatic({
-    'directory': '.',
-    'default': 'index.html'
+
+// server.get(/.*/, restify.serveStatic({
+//     'directory': '.',
+//     'default': 'index.html'
+// }));
+server.get(/\/?.*/, restify.serveStatic({
+    directory: __dirname,
+    default: 'index.html',
+    match: /^((?!server.js).)*$/   // we should deny access to the application source
 }));

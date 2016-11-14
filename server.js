@@ -135,3 +135,13 @@ dialog.matches('cool', [
 
 dialog.onDefault(builder.DialogAction.send(prompts.sorry));
 
+// serve a static web page as hello world confirmation
+// it also contains a web chat interface to this bot
+// note that to use the web chat, you need to add this endpoint
+// in the bot framework page and enter your webchat app secret
+// in the index.html
+server.get(/.*/, restify.serveStatic({
+    'directory': '.',
+    'default': 'index.html'
+}));
+

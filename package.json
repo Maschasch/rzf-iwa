@@ -19,7 +19,6 @@
   "homepage": "https://github.com/Maschasch/rzf-iwa#readme",
   "dependencies": {
     "botbuilder": "^3.4.4",
-    "dtrace-provider": "^0.8.0",
     "restify": "^4.2.0"
   },
   "devDependencies": {}
